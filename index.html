@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="tr" data-theme="light">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -9,8 +10,7 @@
   <link rel="stylesheet" href="style.css" />
 
   <!-- Prism.js (syntax highlight) - varsayılan açık tema -->
-  <link id="prism-theme" rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+  <link id="prism-theme" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <div class="logo" aria-hidden="true">Py</div>
         <div>
           <h1>If Yapısı</h1>
-          <p>Konu anlatımı • Sorular • Çözümler • Kodun ne işe yaradığını yorumlarla öğren</p>
+
         </div>
       </div>
 
@@ -30,63 +30,63 @@
 
         <!-- Aksiyonlar -->
         <button class="pillBtn" id="themeToggle" type="button" title="Gece/Gündüz modu">🌙 Gece Modu</button>
-        <button class="pillBtn" id="pdfBtn" type="button" title="PDF olarak indir">⬇️ PDF İndir</button>
+
       </div>
     </div>
   </header>
 
   <main class="container" id="page">
     <!-- Hızlı özet -->
- <!-- Hızlı özet (Sade giriş) -->
-<section class="hero card" id="intro">
-  <div class="heroIntro">
-    <div class="heroLeft">
-      <div class="heroKicker">Python • Karar Yapıları</div>
-      <h2>If Yapısı: Konu + Soru Çözüm</h2>
-      <p class="heroLead">
-        “Eğer şu şart doğruysa bunu yap” mantığını örneklerle öğrenecek,
-        sonra sorularda aynı mantığı uygulayacaksın.
-      </p>
+    <!-- Hızlı özet (Sade giriş) -->
+    <section class="hero card" id="intro">
+      <div class="heroIntro">
+        <div class="heroLeft">
+          <div class="heroKicker">Python • Karar Yapıları</div>
+          <h2>If Yapısı: Konu + Soru Çözüm</h2>
+          <p class="heroLead">
+            “Eğer şu şart doğruysa bunu yap” mantığını örneklerle öğrenecek,
+            sonra sorularda aynı mantığı uygulayacaksın.
+          </p>
 
-      <ul class="heroList">
-        <li>Önce <b>örneği oku</b></li>
-        <li>Sonra <b>mini dene</b> ile değerleri değiştir</li>
-        <li>En sonda <b>Çözümü göster</b> ile kontrol et</li>
-      </ul>
+          <ul class="heroList">
+            <li>Önce <b>örneği oku</b></li>
+            <li>Sonra <b>mini dene</b> ile değerleri değiştir</li>
+            <li>En sonda <b>Çözümü göster</b> ile kontrol et</li>
+          </ul>
 
-      <div class="heroActions">
-        <a class="heroBtn" href="#lesson-1">Hemen Başla</a>
-        <a class="heroLink" href="#lesson-7">İç içe if’e geç</a>
-      </div>
+          <div class="heroActions">
+            <a class="heroBtn" href="#lesson-1">Hemen Başla</a>
+            <a class="heroLink" href="#lesson-7">İç içe if’e geç</a>
+          </div>
 
-      <div class="heroNote">
-        İpucu: “Çözümü göster” bölümü açılır-kapanır. Önce düşün, sonra aç.
-      </div>
-    </div>
-
-    <div class="heroRight">
-      <div class="heroStats">
-        <div class="stat">
-          <div class="statTop">Bölüm</div>
-          <div class="statVal">11</div>
+          <div class="heroNote">
+            İpucu: “Çözümü göster” bölümü açılır-kapanır. Önce düşün, sonra aç.
+          </div>
         </div>
-        <div class="stat">
-          <div class="statTop">Seviye</div>
-          <div class="statVal">Temel → İleri</div>
-        </div>
-        <div class="stat">
-          <div class="statTop">Tahmini</div>
-          <div class="statVal">20–30 dk</div>
-        </div>
-      </div>
 
-      <div class="heroBox">
-        <div class="heroBoxTitle">Hedef</div>
-        <div class="heroBoxText">Net + anlaşılır if mantığı</div>
+        <div class="heroRight">
+          <div class="heroStats">
+            <div class="stat">
+              <div class="statTop">Bölüm</div>
+              <div class="statVal">11</div>
+            </div>
+            <div class="stat">
+              <div class="statTop">Seviye</div>
+              <div class="statVal">Temel → İleri</div>
+            </div>
+            <div class="stat">
+              <div class="statTop">Tahmini</div>
+              <div class="statVal">20–30 dk</div>
+            </div>
+          </div>
+
+          <div class="heroBox">
+            <div class="heroBoxTitle">Hedef</div>
+            <div class="heroBoxText">Net + anlaşılır if mantığı</div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
 
@@ -117,12 +117,13 @@
 
         <div class="block">
           <h3>Soru</h3>
-          <p><b>Soru:</b> Hava <code>yağmurlu</code> olduğunda ekrana <code>Şemsiye Al!</code> yazdıran programı yazınız.</p>
+          <p><b>Soru:</b> Hava <code>yağmurlu</code> olduğunda ekrana <code>Şemsiye Al!</code> yazdıran programı
+            yazınız.</p>
 
           <h3 style="margin-top:14px;">Kod</h3>
           <div class="codewrap">
             <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">hava = "yağmurlu"
+            <pre><code class="language-python">hava = "yağmurlu"
 
 if hava == "yağmurlu":
     print("Şemsiye Al!")</code></pre>
@@ -132,7 +133,7 @@ if hava == "yağmurlu":
             <div class="out-head">Ekran Çıktısı</div>
             <pre>Şemsiye Al!</pre>
           </div>
-</div>
+        </div>
     </section>
     <!-- ✅ Bu hata çok yapılıyor -->
     <section class="card lesson">
@@ -174,8 +175,8 @@ if sayi % 2 != 0:
             <summary>Örnekle açıkla</summary>
             <div class="answer-body">
               <p>
-                Python: <code>-7 % 2</code> → <b>1</b> (pozitif kalan döndürür).<br/>
-                Bazı diller: <code>-7 % 2</code> → <b>-1</b> olabilir.<br/>
+                Python: <code>-7 % 2</code> → <b>1</b> (pozitif kalan döndürür).<br />
+                Bazı diller: <code>-7 % 2</code> → <b>-1</b> olabilir.<br />
                 Bu yüzden sınav mantığı için: <b><code>% 2 != 0</code></b> tek kontrolünde daha sağlamdır.
               </p>
             </div>
@@ -215,7 +216,7 @@ if sayi % 2 != 0:
                   <h3>Atama örnekleri</h3>
                   <div class="codewrap">
                     <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">isim = "Ali"
+                    <pre><code class="language-python">isim = "Ali"
 sehir = input("Şehrinizi giriniz: ")
 puan = 80</code></pre>
                   </div>
@@ -230,7 +231,7 @@ puan = 80</code></pre>
                   <h3>Karşılaştırma örneği</h3>
                   <div class="codewrap">
                     <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">sayi = 10
+                    <pre><code class="language-python">sayi = 10
 if sayi == 10:
     print("Sayı 10")</code></pre>
                   </div>
@@ -276,7 +277,8 @@ print("Pozitif")</code></pre>
           </div>
 
           <p class="mText">
-            Python’da <code>if</code>, <code>elif</code> ve <code>else</code> satırlarının sonunda mutlaka <b>iki nokta</b> (<code>:</code>) olmalıdır.
+            Python’da <code>if</code>, <code>elif</code> ve <code>else</code> satırlarının sonunda mutlaka <b>iki
+              nokta</b> (<code>:</code>) olmalıdır.
             Aksi halde kod hata verir ve çalışmaz.
           </p>
 
@@ -370,7 +372,8 @@ elif puan &gt;= 70:
             <div class="mBadge">Puan kaçırır</div>
           </div>
           <p class="mText">
-            <code>input()</code> her zaman <b>metin (str)</b> döndürür. Sayısal karşılaştırma yapacaksan <b><code>int()</code></b> gerekir.
+            <code>input()</code> her zaman <b>metin (str)</b> döndürür. Sayısal karşılaştırma yapacaksan
+            <b><code>int()</code></b> gerekir.
           </p>
           <div class="mGrid">
             <div class="mBox">
@@ -398,80 +401,98 @@ if sayi &gt; 0:
       </div>
 
       <div class="opTableWrap">
-  <table class="opTable" aria-label="Karşılaştırma operatörleri tablosu">
-    <thead>
-      <tr>
-        <th>Operatör</th>
-        <th>Anlamı</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><code>==</code></td><td>Eşit mi</td></tr>
-      <tr><td><code>!=</code></td><td>Eşit değil mi</td></tr>
-      <tr><td><code>&gt;</code></td><td>Büyüktür</td></tr>
-      <tr><td><code>&lt;</code></td><td>Küçüktür</td></tr>
-      <tr><td><code>&gt;=</code></td><td>Büyük eşit</td></tr>
-      <tr><td><code>&lt;=</code></td><td>Küçük eşit</td></tr>
-    </tbody>
-  </table>
-</div>
+        <table class="opTable" aria-label="Karşılaştırma operatörleri tablosu">
+          <thead>
+            <tr>
+              <th>Operatör</th>
+              <th>Anlamı</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>==</code></td>
+              <td>Eşit mi</td>
+            </tr>
+            <tr>
+              <td><code>!=</code></td>
+              <td>Eşit değil mi</td>
+            </tr>
+            <tr>
+              <td><code>&gt;</code></td>
+              <td>Büyüktür</td>
+            </tr>
+            <tr>
+              <td><code>&lt;</code></td>
+              <td>Küçüktür</td>
+            </tr>
+            <tr>
+              <td><code>&gt;=</code></td>
+              <td>Büyük eşit</td>
+            </tr>
+            <tr>
+              <td><code>&lt;=</code></td>
+              <td>Küçük eşit</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <div class="grid">
-        <div class="block">
-          <h3>Soru</h3>
-          <p><b>Soru:</b> Hava <code>güneşli</code> ise “Şemsiye al”, değilse “Şemsiye almana gerek yok” yazdırınız.</p>
+      <div class="block">
+        <h3>Soru</h3>
+        <p><b>Soru:</b> Hava <code>güneşli</code> ise “Şemsiye al”, değilse “Şemsiye almana gerek yok” yazdırınız.</p>
 
-          <h3 style="margin-top:14px;">Kod</h3>
-          <div class="codewrap">
-            <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">hava = "yağmurlu"
+        <h3 style="margin-top:14px;">Kod</h3>
+        <div class="codewrap">
+          <button class="copy" data-copy>kopyala</button>
+          <pre><code class="language-python">hava = "yağmurlu"
 
 if hava == "güneşli":
     print("Şemsiye al")
 else:
     print("Şemsiye almana gerek yok")</code></pre>
-          </div>
-
-          <div class="output">
-            <div class="out-head">Ekran Çıktısı</div>
-            <pre>Şemsiye almana gerek yok</pre>
-          </div>
         </div>
 
-        <div class="block">
-          <h3>Kısa soru</h3>
-          <p><b>Soru:</b> <code>hava = "güneşli"</code> olsaydı ekranda ne yazardı?</p>
-
-          <details class="answer">
-            <summary>Çözümü göster</summary>
-            <div class="answer-body">
-              <p><b>Cevap:</b> <code>Şemsiye al</code> yazardı. Çünkü koşul doğru olur ve if bloğu çalışır.</p>
-              <div class="output mini">
-                <div class="out-head">Ekran Çıktısı</div>
-                <pre>Şemsiye al</pre>
-              </div>
-            </div>
-          </details>
-
-          <!-- 🧪 Kendin Dene -->
-          <div class="tryMini" data-try="lesson2">
-            <div class="tryMiniHead">
-              <div class="tryMiniTitle">🧪 Kendin Dene</div>
-              <button class="tryMiniBtn" type="button" data-run="lesson2">Çalıştır</button>
-            </div>
-            <div class="tryMiniRow">
-              <label>hava:</label>
-              <input type="text" value="güneşli" data-input="hava" />
-            </div>
-            <div class="tryMiniOut">
-              <div class="tryMiniOutHead">Çıktı</div>
-              <pre data-out>Buraya çıktı gelecek…</pre>
-            </div>
-          </div>
-
+        <div class="output">
+          <div class="out-head">Ekran Çıktısı</div>
+          <pre>Şemsiye almana gerek yok</pre>
         </div>
       </div>
+
+      <div class="block">
+        <h3>Kısa soru</h3>
+        <p><b>Soru:</b> <code>hava = "güneşli"</code> olsaydı ekranda ne yazardı?</p>
+
+        <details class="answer">
+          <summary>Çözümü göster</summary>
+          <div class="answer-body">
+            <p><b>Cevap:</b> <code>Şemsiye al</code> yazardı. Çünkü koşul doğru olur ve if bloğu çalışır.</p>
+            <div class="output mini">
+              <div class="out-head">Ekran Çıktısı</div>
+              <pre>Şemsiye al</pre>
+            </div>
+          </div>
+        </details>
+
+        <!-- 🧪 Kendin Dene -->
+        <div class="tryMini" data-try="lesson2">
+          <div class="tryMiniHead">
+            <div class="tryMiniTitle">🧪 Kendin Dene</div>
+            <button class="tryMiniBtn" type="button" data-run="lesson2">Çalıştır</button>
+          </div>
+          <div class="tryMiniRow">
+            <label>hava:</label>
+            <input type="text" value="güneşli" data-input="hava" />
+          </div>
+          <div class="tryMiniOut">
+            <div class="tryMiniOutHead">Çıktı</div>
+            <pre data-out>Buraya çıktı gelecek…</pre>
+          </div>
+        </div>
+
+      </div>
+    </div>
     <!-- 3) Not ortalaması -->
     <section class="card lesson" id="lesson-3">
       <div class="lesson-head">
@@ -487,7 +508,7 @@ else:
           <h3 style="margin-top:14px;">Kod</h3>
           <div class="codewrap">
             <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">not_ort = 75
+            <pre><code class="language-python">not_ort = 75
 
 if not_ort >= 85:
     print("Takdir aldın")
@@ -552,7 +573,7 @@ else:
           <h3 style="margin-top:14px;">Kod</h3>
           <div class="codewrap">
             <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">sayi = int(input("Bir sayı gir: "))
+            <pre><code class="language-python">sayi = int(input("Bir sayı gir: "))
 
 if sayi > 0:
     print("Pozitif")
@@ -619,7 +640,7 @@ else:
           <h3 style="margin-top:14px;">Kod</h3>
           <div class="codewrap">
             <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">sayi = int(input("Bir sayı gir: "))
+            <pre><code class="language-python">sayi = int(input("Bir sayı gir: "))
 
 if sayi % 2 == 0:
     print("Çift sayı")
@@ -678,12 +699,13 @@ else:
       <div class="grid">
         <div class="block">
           <h3>Soru</h3>
-          <p><b>Soru:</b> Not ortalaması ve devama göre “Takdir / Teşekkür / Devamsızlıktan kaldı / Başarısız” yazdırınız.</p>
+          <p><b>Soru:</b> Not ortalaması ve devama göre “Takdir / Teşekkür / Devamsızlıktan kaldı / Başarısız”
+            yazdırınız.</p>
 
           <h3 style="margin-top:14px;">Kod</h3>
           <div class="codewrap">
             <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">not1 = 80
+            <pre><code class="language-python">not1 = 80
 not2 = 90
 devam = True
 
@@ -775,7 +797,7 @@ else:
           <h3>Çözüm Kodu (Basit)</h3>
           <div class="codewrap">
             <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">sayi = 5
+            <pre><code class="language-python">sayi = 5
 
 if sayi > 0:
     if sayi % 2 == 0:
@@ -841,7 +863,7 @@ else:
           <h3 style="margin-top:14px;">Kod</h3>
           <div class="codewrap">
             <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">sayi = 0
+            <pre><code class="language-python">sayi = 0
 
 if sayi % 2 != 0:
     if sayi > 0:
@@ -917,7 +939,7 @@ elif sayi % 2 == 0:
           <h3>Kod</h3>
           <div class="codewrap">
             <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">yas = int(input("Yaşınızı girin: "))
+            <pre><code class="language-python">yas = int(input("Yaşınızı girin: "))
 ogrenci_mi = input("Öğrenci misiniz? (evet/hayır): ")
 
 if yas >= 18:
@@ -995,12 +1017,13 @@ else:
       <div class="grid">
         <div class="block">
           <h3>Soru</h3>
-          <p><b>Soru:</b> Devam “evet” ise ortalamaya göre takdir/teşekkür/geçmedi yazdırınız. Devam “hayır” ise devamsızlıktan kaldı yazdırınız.</p>
+          <p><b>Soru:</b> Devam “evet” ise ortalamaya göre takdir/teşekkür/geçmedi yazdırınız. Devam “hayır” ise
+            devamsızlıktan kaldı yazdırınız.</p>
 
           <h3 style="margin-top:14px;">Kod</h3>
           <div class="codewrap">
             <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">not1 = 75
+            <pre><code class="language-python">not1 = 75
 not2 = 80
 devam = input("Devam (evet/hayır): ")
 
@@ -1083,12 +1106,13 @@ else:
       <div class="grid">
         <div class="block">
           <h3>Soru</h3>
-          <p><b>Soru:</b> Can/level/altın değerlerine göre karakterin “eşya alıp alamayacağını” belirleyen programı yazınız.</p>
+          <p><b>Soru:</b> Can/level/altın değerlerine göre karakterin “eşya alıp alamayacağını” belirleyen programı
+            yazınız.</p>
 
           <h3 style="margin-top:14px;">Kod</h3>
           <div class="codewrap">
             <button class="copy" data-copy>kopyala</button>
-<pre><code class="language-python">can = 3
+            <pre><code class="language-python">can = 3
 altin = 100
 level = 5
 
@@ -1175,4 +1199,5 @@ else:
 
   <script src="script.js"></script>
 </body>
+
 </html>
