@@ -1,0 +1,1178 @@
+<!doctype html>
+<html lang="tr" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>If Yapısı — Konu Anlatımı + Sorular</title>
+  <meta name="description" content="Python if-elif-else konu anlatımı, sorular, çözümler ve kod açıklamaları." />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Prism.js (syntax highlight) - varsayılan açık tema -->
+  <link id="prism-theme" rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.min.css">
+</head>
+
+<body>
+  <header class="top">
+    <div class="container">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">Py</div>
+        <div>
+          <h1>If Yapısı</h1>
+          <p>Konu anlatımı • Sorular • Çözümler • Kodun ne işe yaradığını yorumlarla öğren</p>
+        </div>
+      </div>
+
+      <div class="meta">
+        <span class="pill">Kars Fen Lisesi 10. sınıf öğrencileri için Sınava Hazırlık Modülü</span>
+        <span class="pill">Hazırlayan Mehmet PEKER</span>
+
+        <!-- Aksiyonlar -->
+        <button class="pillBtn" id="themeToggle" type="button" title="Gece/Gündüz modu">🌙 Gece Modu</button>
+        <button class="pillBtn" id="pdfBtn" type="button" title="PDF olarak indir">⬇️ PDF İndir</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container" id="page">
+    <!-- Hızlı özet -->
+ <!-- Hızlı özet (Sade giriş) -->
+<section class="hero card" id="intro">
+  <div class="heroIntro">
+    <div class="heroLeft">
+      <div class="heroKicker">Python • Karar Yapıları</div>
+      <h2>If Yapısı: Konu + Soru Çözüm</h2>
+      <p class="heroLead">
+        “Eğer şu şart doğruysa bunu yap” mantığını örneklerle öğrenecek,
+        sonra sorularda aynı mantığı uygulayacaksın.
+      </p>
+
+      <ul class="heroList">
+        <li>Önce <b>örneği oku</b></li>
+        <li>Sonra <b>mini dene</b> ile değerleri değiştir</li>
+        <li>En sonda <b>Çözümü göster</b> ile kontrol et</li>
+      </ul>
+
+      <div class="heroActions">
+        <a class="heroBtn" href="#lesson-1">Hemen Başla</a>
+        <a class="heroLink" href="#lesson-7">İç içe if’e geç</a>
+      </div>
+
+      <div class="heroNote">
+        İpucu: “Çözümü göster” bölümü açılır-kapanır. Önce düşün, sonra aç.
+      </div>
+    </div>
+
+    <div class="heroRight">
+      <div class="heroStats">
+        <div class="stat">
+          <div class="statTop">Bölüm</div>
+          <div class="statVal">11</div>
+        </div>
+        <div class="stat">
+          <div class="statTop">Seviye</div>
+          <div class="statVal">Temel → İleri</div>
+        </div>
+        <div class="stat">
+          <div class="statTop">Tahmini</div>
+          <div class="statVal">20–30 dk</div>
+        </div>
+      </div>
+
+      <div class="heroBox">
+        <div class="heroBoxTitle">Hedef</div>
+        <div class="heroBoxText">Net + anlaşılır if mantığı</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+    <!-- 1) If nedir -->
+    <section class="card lesson" id="lesson-1">
+      <div class="lesson-head">
+        <h2>1) If nedir?</h2>
+        <span class="tag">Temel</span>
+      </div>
+
+      <p class="lead">
+        <b>if</b>, programlara “eğer şu şart doğruysa bunu yap” dememizi sağlar. Karar verme yapısıdır.
+      </p>
+
+      <div class="grid">
+        <div class="block">
+          <h3>Günlük hayattan örnek</h3>
+          <div class="quote">Eğer hava yağmurluysa şemsiye al.</div>
+          <div class="quote" style="margin-top:8px;">Eğer telefonun şarjı %20’nin altındaysa şarja tak.</div>
+          <div class="quote" style="margin-top:8px;">Eğer ödevini bitirdiysen dışarı çıkabilirsin.</div>
+          <div class="quote" style="margin-top:8px;">Eğer trafik ışığı kırmızıysa dur, yeşilse geç.</div>
+          <div class="quote" style="margin-top:8px;">Eğer sınavdan 80 ve üzeri aldıysan “çok iyi” yazdır.</div>
+          <div class="quote" style="margin-top:8px;">Eğer su kaynıyorsa ocağı kapat.</div>
+          <div class="quote" style="margin-top:8px;">Eğer okul zili çaldıysa derse gir.</div>
+        </div>
+
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> Hava <code>yağmurlu</code> olduğunda ekrana <code>Şemsiye Al!</code> yazdıran programı yazınız.</p>
+
+          <h3 style="margin-top:14px;">Kod</h3>
+          <div class="codewrap">
+            <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">hava = "yağmurlu"
+
+if hava == "yağmurlu":
+    print("Şemsiye Al!")</code></pre>
+          </div>
+
+          <div class="output">
+            <div class="out-head">Ekran Çıktısı</div>
+            <pre>Şemsiye Al!</pre>
+          </div>
+</div>
+    </section>
+    <!-- ✅ Bu hata çok yapılıyor -->
+    <section class="card lesson">
+      <div class="lesson-head">
+        <h2>✅ Bu Hata Çok Yapılıyor</h2>
+        <span class="tag">Bonus</span>
+      </div>
+
+      <div class="mistakes">
+
+        <!-- 1 -->
+        <article class="mistake">
+          <div class="mistakeHead">
+            <div class="mTitle">1) Tek sayıyı kontrol ederken <code>== 1</code> kullanmak</div>
+            <div class="mBadge">Sık hata</div>
+          </div>
+          <p class="mText">
+            Python’da <code>-7 % 2</code> sonucu <b>1</b> çıkar. Ama bazı dillerde kalan negatif olabildiği için
+            <code>-7 % 2</code> sonucu <b>-1</b> çıkabilir. Bu yüzden en sağlam yaklaşım:
+            <b><code>kalan != 0</code> → tek</b>.
+          </p>
+
+          <div class="mGrid">
+            <div class="mBox">
+              <div class="mLabel">Hata</div>
+              <pre class="mCode"><code>sayi = -7
+if sayi % 2 == 1:
+    print("Tek")</code></pre>
+            </div>
+            <div class="mBox">
+              <div class="mLabel ok">Doğrusu</div>
+              <pre class="mCode"><code>sayi = -7
+if sayi % 2 != 0:
+    print("Tek")</code></pre>
+            </div>
+          </div>
+
+          <details class="answer">
+            <summary>Örnekle açıkla</summary>
+            <div class="answer-body">
+              <p>
+                Python: <code>-7 % 2</code> → <b>1</b> (pozitif kalan döndürür).<br/>
+                Bazı diller: <code>-7 % 2</code> → <b>-1</b> olabilir.<br/>
+                Bu yüzden sınav mantığı için: <b><code>% 2 != 0</code></b> tek kontrolünde daha sağlamdır.
+              </p>
+            </div>
+          </details>
+        </article>
+
+        <!-- 2 -->
+        <article class="mistake">
+          <div class="mistakeHead">
+            <div class="mTitle">2) Karşılaştırmada <code>=</code> ile <code>==</code> karıştırmak</div>
+            <div class="mBadge">Puan kaçırır</div>
+          </div>
+
+          <p class="mText">
+            <b><code>=</code> atama yapar</b> (değişkene değer koyar),
+            <b><code>==</code> karşılaştırır</b> (eşit mi diye bakar). Sınavda en çok buradan puan gider.
+          </p>
+
+          <div class="mGrid">
+            <div class="mBox">
+              <div class="mLabel">Hata</div>
+              <pre class="mCode"><code>if sayi = 10:
+    print("On")</code></pre>
+            </div>
+            <div class="mBox">
+              <div class="mLabel ok">Doğrusu</div>
+              <pre class="mCode"><code>if sayi == 10:
+    print("On")</code></pre>
+            </div>
+          </div>
+
+          <details class="answer">
+            <summary><code>=</code> operatörünü doğru kullanma örnekleri</summary>
+            <div class="answer-body">
+              <div class="grid" style="margin-top:10px;">
+                <div class="block">
+                  <h3>Atama örnekleri</h3>
+                  <div class="codewrap">
+                    <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">isim = "Ali"
+sehir = input("Şehrinizi giriniz: ")
+puan = 80</code></pre>
+                  </div>
+
+                  <div class="output mini">
+                    <div class="out-head">Ekran Çıktısı (not)</div>
+                    <pre>(Bu kod ekrana yazdırmaz, sadece değişkenlere değer atar.)</pre>
+                  </div>
+                </div>
+
+                <div class="block">
+                  <h3>Karşılaştırma örneği</h3>
+                  <div class="codewrap">
+                    <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">sayi = 10
+if sayi == 10:
+    print("Sayı 10")</code></pre>
+                  </div>
+
+                  <div class="output mini">
+                    <div class="out-head">Ekran Çıktısı</div>
+                    <pre>Sayı 10</pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <!-- 3 -->
+        <article class="mistake">
+          <div class="mistakeHead">
+            <div class="mTitle">3) Girintiyi (indent) yanlış yapmak</div>
+            <div class="mBadge">Dikkat</div>
+          </div>
+          <p class="mText">
+            Python’da <b>girinti</b> çok önemlidir. <code>if</code> altındaki satırlar mutlaka içeri girintili olmalı.
+          </p>
+          <div class="mGrid">
+            <div class="mBox">
+              <div class="mLabel">Hata</div>
+              <pre class="mCode"><code>if sayi &gt; 0:
+print("Pozitif")</code></pre>
+            </div>
+            <div class="mBox">
+              <div class="mLabel ok">Doğrusu</div>
+              <pre class="mCode"><code>if sayi &gt; 0:
+    print("Pozitif")</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="mistake">
+          <div class="mistakeHead">
+            <div class="mTitle">4) <code>if / elif / else</code> satırının sonuna <code>:</code> koymamak</div>
+            <div class="mBadge">Sık hata</div>
+          </div>
+
+          <p class="mText">
+            Python’da <code>if</code>, <code>elif</code> ve <code>else</code> satırlarının sonunda mutlaka <b>iki nokta</b> (<code>:</code>) olmalıdır.
+            Aksi halde kod hata verir ve çalışmaz.
+          </p>
+
+          <div class="mGrid">
+            <div class="mBox">
+              <div class="mLabel">Hata</div>
+              <pre class="mCode"><code>if sayi &gt; 0
+    print("Pozitif")</code></pre>
+            </div>
+            <div class="mBox">
+              <div class="mLabel ok">Doğrusu</div>
+              <pre class="mCode"><code>if sayi &gt; 0:
+    print("Pozitif")</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="mistake">
+          <div class="mistakeHead">
+            <div class="mTitle">5) <code>else</code> satırına koşul yazmak</div>
+            <div class="mBadge">Puan kaçırır</div>
+          </div>
+
+          <p class="mText">
+            <code>else</code> <b>“diğer tüm durumlar”</b> demektir ve <b>koşul yazılmaz</b>.
+            Bazı öğrenciler <code>else sayi &lt;= 0:</code> gibi yazıyor; bu yanlıştır.
+          </p>
+
+          <div class="mGrid">
+            <div class="mBox">
+              <div class="mLabel">Hata</div>
+              <pre class="mCode"><code>if sayi &gt; 0:
+    print("Pozitif")
+else sayi &lt;= 0:
+    print("Sıfır veya negatif")</code></pre>
+            </div>
+            <div class="mBox">
+              <div class="mLabel ok">Doğrusu</div>
+              <pre class="mCode"><code>if sayi &gt; 0:
+    print("Pozitif")
+else:
+    print("Sıfır veya negatif")</code></pre>
+            </div>
+          </div>
+
+          <details class="answer">
+            <summary>Neden böyle?</summary>
+            <div class="answer-body">
+              <p>
+                Çünkü <code>else</code>, <code>if</code> ve <code>elif</code> koşulları <b>yanlışsa</b> çalışır.
+                Yani zaten “geri kalan her şey” anlamına gelir.
+              </p>
+            </div>
+          </details>
+        </article>
+
+        <!-- 6 -->
+        <article class="mistake">
+          <div class="mistakeHead">
+            <div class="mTitle">6) <code>elif</code> sırasını yanlış yazmak</div>
+            <div class="mBadge">Sık hata</div>
+          </div>
+          <p class="mText">
+            Bazı sorularda aralıklar üst üste biner. Büyük aralığı önce yazarsan, küçük aralıklar hiç çalışmayabilir.
+          </p>
+          <div class="mGrid">
+            <div class="mBox">
+              <div class="mLabel">Hata</div>
+              <pre class="mCode"><code>puan = 90
+if puan &gt;= 70:
+    print("Teşekkür")
+elif puan &gt;= 85:
+    print("Takdir")</code></pre>
+            </div>
+            <div class="mBox">
+              <div class="mLabel ok">Doğrusu</div>
+              <pre class="mCode"><code>puan = 90
+if puan &gt;= 85:
+    print("Takdir")
+elif puan &gt;= 70:
+    print("Teşekkür")</code></pre>
+            </div>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="mistake">
+          <div class="mistakeHead">
+            <div class="mTitle">7) <code>input()</code> ile gelen değeri sayıya çevirmeyi unutmak</div>
+            <div class="mBadge">Puan kaçırır</div>
+          </div>
+          <p class="mText">
+            <code>input()</code> her zaman <b>metin (str)</b> döndürür. Sayısal karşılaştırma yapacaksan <b><code>int()</code></b> gerekir.
+          </p>
+          <div class="mGrid">
+            <div class="mBox">
+              <div class="mLabel">Hata</div>
+              <pre class="mCode"><code>sayi = input("Sayı: ")
+if sayi &gt; 0:
+    print("Pozitif")</code></pre>
+            </div>
+            <div class="mBox">
+              <div class="mLabel ok">Doğrusu</div>
+              <pre class="mCode"><code>sayi = int(input("Sayı: "))
+if sayi &gt; 0:
+    print("Pozitif")</code></pre>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+    <!-- 2) Karşılaştırma operatörleri -->
+    <section class="card lesson" id="lesson-2">
+      <div class="lesson-head">
+        <h2>2) Karşılaştırma Operatörleri</h2>
+        <span class="tag">Tablo</span>
+      </div>
+
+      <div class="opTableWrap">
+  <table class="opTable" aria-label="Karşılaştırma operatörleri tablosu">
+    <thead>
+      <tr>
+        <th>Operatör</th>
+        <th>Anlamı</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>==</code></td><td>Eşit mi</td></tr>
+      <tr><td><code>!=</code></td><td>Eşit değil mi</td></tr>
+      <tr><td><code>&gt;</code></td><td>Büyüktür</td></tr>
+      <tr><td><code>&lt;</code></td><td>Küçüktür</td></tr>
+      <tr><td><code>&gt;=</code></td><td>Büyük eşit</td></tr>
+      <tr><td><code>&lt;=</code></td><td>Küçük eşit</td></tr>
+    </tbody>
+  </table>
+</div>
+    </section>
+
+    <div class="grid">
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> Hava <code>güneşli</code> ise “Şemsiye al”, değilse “Şemsiye almana gerek yok” yazdırınız.</p>
+
+          <h3 style="margin-top:14px;">Kod</h3>
+          <div class="codewrap">
+            <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">hava = "yağmurlu"
+
+if hava == "güneşli":
+    print("Şemsiye al")
+else:
+    print("Şemsiye almana gerek yok")</code></pre>
+          </div>
+
+          <div class="output">
+            <div class="out-head">Ekran Çıktısı</div>
+            <pre>Şemsiye almana gerek yok</pre>
+          </div>
+        </div>
+
+        <div class="block">
+          <h3>Kısa soru</h3>
+          <p><b>Soru:</b> <code>hava = "güneşli"</code> olsaydı ekranda ne yazardı?</p>
+
+          <details class="answer">
+            <summary>Çözümü göster</summary>
+            <div class="answer-body">
+              <p><b>Cevap:</b> <code>Şemsiye al</code> yazardı. Çünkü koşul doğru olur ve if bloğu çalışır.</p>
+              <div class="output mini">
+                <div class="out-head">Ekran Çıktısı</div>
+                <pre>Şemsiye al</pre>
+              </div>
+            </div>
+          </details>
+
+          <!-- 🧪 Kendin Dene -->
+          <div class="tryMini" data-try="lesson2">
+            <div class="tryMiniHead">
+              <div class="tryMiniTitle">🧪 Kendin Dene</div>
+              <button class="tryMiniBtn" type="button" data-run="lesson2">Çalıştır</button>
+            </div>
+            <div class="tryMiniRow">
+              <label>hava:</label>
+              <input type="text" value="güneşli" data-input="hava" />
+            </div>
+            <div class="tryMiniOut">
+              <div class="tryMiniOutHead">Çıktı</div>
+              <pre data-out>Buraya çıktı gelecek…</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <!-- 3) Not ortalaması -->
+    <section class="card lesson" id="lesson-3">
+      <div class="lesson-head">
+        <h2>3) if-elif-else ile not değerlendirme</h2>
+        <span class="tag">Temel</span>
+      </div>
+
+      <div class="grid">
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> Bir öğrencinin not ortalamasına göre “Takdir / Teşekkür / Belge alamadı” yazdırınız.</p>
+
+          <h3 style="margin-top:14px;">Kod</h3>
+          <div class="codewrap">
+            <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">not_ort = 75
+
+if not_ort >= 85:
+    print("Takdir aldın")
+elif not_ort >= 70:
+    print("Teşekkür aldın")
+else:
+    print("Belge alamadın")</code></pre>
+          </div>
+
+          <div class="output">
+            <div class="out-head">Ekran Çıktısı</div>
+            <pre>Teşekkür aldın</pre>
+          </div>
+        </div>
+
+        <div class="block">
+          <h3>Kısa soru</h3>
+          <p><b>Soru:</b> <code>not_ort = 65</code> olursa sonuç ne olur?</p>
+          <details class="answer">
+            <summary>Çözümü göster</summary>
+            <div class="answer-body">
+              <p><b>Cevap:</b> <code>Belge alamadın</code> yazdırır. Çünkü 65, 70’ten küçüktür.</p>
+              <div class="output mini">
+                <div class="out-head">Ekran Çıktısı</div>
+                <pre>Belge alamadın</pre>
+              </div>
+            </div>
+          </details>
+
+          <!-- 🧪 Kendin Dene -->
+          <div class="tryMini" data-try="lesson3">
+            <div class="tryMiniHead">
+              <div class="tryMiniTitle">🧪 Kendin Dene</div>
+              <button class="tryMiniBtn" type="button" data-run="lesson3">Çalıştır</button>
+            </div>
+            <div class="tryMiniRow">
+              <label>not_ort:</label>
+              <input type="number" value="65" data-input="not_ort" />
+            </div>
+            <div class="tryMiniOut">
+              <div class="tryMiniOutHead">Çıktı</div>
+              <pre data-out>Buraya çıktı gelecek…</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) Pozitif/Negatif/Sıfır -->
+    <section class="card lesson" id="lesson-4">
+      <div class="lesson-head">
+        <h2>4) Pozitif / Negatif / Sıfır</h2>
+        <span class="tag">Temel</span>
+      </div>
+
+      <div class="grid">
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> Kullanıcıdan alınan sayının pozitif mi, negatif mi yoksa sıfır mı olduğunu yazdırınız.</p>
+
+          <h3 style="margin-top:14px;">Kod</h3>
+          <div class="codewrap">
+            <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">sayi = int(input("Bir sayı gir: "))
+
+if sayi > 0:
+    print("Pozitif")
+elif sayi < 0:
+    print("Negatif")
+else:
+    print("Sıfır")</code></pre>
+          </div>
+
+          <div class="output">
+            <div class="out-head">Ekran Çıktısı</div>
+            <div class="out-sub">Örnek giriş: <b>10</b></div>
+            <pre>Pozitif</pre>
+          </div>
+        </div>
+
+        <div class="block">
+          <h3>Kısa soru</h3>
+          <p><b>Soru:</b> Kullanıcı <code>0</code> girerse hangi blok çalışır?</p>
+          <details class="answer">
+            <summary>Çözümü göster</summary>
+            <div class="answer-body">
+              <p><b>Cevap:</b> <b>else</b> bloğu çalışır ve <code>Sıfır</code> yazdırır.</p>
+              <div class="output mini">
+                <div class="out-head">Ekran Çıktısı</div>
+                <div class="out-sub">Örnek giriş: <b>0</b></div>
+                <pre>Sıfır</pre>
+              </div>
+            </div>
+          </details>
+
+          <!-- 🧪 Kendin Dene -->
+          <div class="tryMini" data-try="lesson4">
+            <div class="tryMiniHead">
+              <div class="tryMiniTitle">🧪 Kendin Dene</div>
+              <button class="tryMiniBtn" type="button" data-run="lesson4">Çalıştır</button>
+            </div>
+            <div class="tryMiniRow">
+              <label>sayi:</label>
+              <input type="number" value="0" data-input="sayi" />
+            </div>
+            <div class="tryMiniOut">
+              <div class="tryMiniOutHead">Çıktı</div>
+              <pre data-out>Buraya çıktı gelecek…</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) Tek/Çift -->
+    <section class="card lesson" id="lesson-5">
+      <div class="lesson-head">
+        <h2>5) Tek / Çift (Mod alma)</h2>
+        <span class="tag">Temel</span>
+      </div>
+
+      <div class="grid">
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> Kullanıcıdan alınan sayının tek mi çift mi olduğunu yazdırınız.</p>
+
+          <h3 style="margin-top:14px;">Kod</h3>
+          <div class="codewrap">
+            <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">sayi = int(input("Bir sayı gir: "))
+
+if sayi % 2 == 0:
+    print("Çift sayı")
+else:
+    print("Tek sayı")</code></pre>
+          </div>
+
+          <div class="output">
+            <div class="out-head">Ekran Çıktısı</div>
+            <div class="out-sub">Örnek giriş: <b>9</b></div>
+            <pre>Tek sayı</pre>
+          </div>
+        </div>
+
+        <div class="block">
+          <h3>Kısa soru</h3>
+          <p><b>Soru:</b> <code>9 % 2</code> kaçtır ve 9 tek mi çift mi?</p>
+          <details class="answer">
+            <summary>Çözümü göster</summary>
+            <div class="answer-body">
+              <p><b>Cevap:</b> <code>9 % 2 = 1</code>. Kalan 0 olmadığı için 9 <b>tek</b> sayıdır.</p>
+              <div class="output mini">
+                <div class="out-head">Ekran Çıktısı</div>
+                <pre>Tek sayı</pre>
+              </div>
+            </div>
+          </details>
+
+          <!-- 🧪 Kendin Dene -->
+          <div class="tryMini" data-try="lesson5">
+            <div class="tryMiniHead">
+              <div class="tryMiniTitle">🧪 Kendin Dene</div>
+              <button class="tryMiniBtn" type="button" data-run="lesson5">Çalıştır</button>
+            </div>
+            <div class="tryMiniRow">
+              <label>sayi:</label>
+              <input type="number" value="9" data-input="sayi" />
+            </div>
+            <div class="tryMiniOut">
+              <div class="tryMiniOutHead">Çıktı</div>
+              <pre data-out>Buraya çıktı gelecek…</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6) Mantık operatörleri + devam -->
+    <section class="card lesson" id="lesson-6">
+      <div class="lesson-head">
+        <h2>6) Mantık operatörleri: and (devam + ortalama)</h2>
+        <span class="tag">Orta</span>
+      </div>
+
+      <div class="grid">
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> Not ortalaması ve devama göre “Takdir / Teşekkür / Devamsızlıktan kaldı / Başarısız” yazdırınız.</p>
+
+          <h3 style="margin-top:14px;">Kod</h3>
+          <div class="codewrap">
+            <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">not1 = 80
+not2 = 90
+devam = True
+
+ortalama = (not1 + not2) / 2
+
+if ortalama >= 85 and devam:
+    print("Takdir aldın")
+elif ortalama >= 70 and devam:
+    print("Teşekkür aldın")
+elif not devam:
+    print("Devamsızlıktan kaldın")
+else:
+    print("Başarısız")</code></pre>
+          </div>
+
+          <div class="output">
+            <div class="out-head">Ekran Çıktısı</div>
+            <pre>Takdir aldın</pre>
+          </div>
+        </div>
+
+        <div class="block">
+          <h3>Kısa soru</h3>
+          <p><b>Soru:</b> Ortalama 90 ama <code>devam = False</code> olursa ne olur?</p>
+          <details class="answer">
+            <summary>Çözümü göster</summary>
+            <div class="answer-body">
+              <p><b>Cevap:</b> <code>Devamsızlıktan kaldın</code> yazdırır. Çünkü devam şartı sağlanmıyor.</p>
+              <div class="output mini">
+                <div class="out-head">Ekran Çıktısı</div>
+                <pre>Devamsızlıktan kaldın</pre>
+              </div>
+            </div>
+          </details>
+
+          <!-- 🧪 Kendin Dene -->
+          <div class="tryMini" data-try="lesson6">
+            <div class="tryMiniHead">
+              <div class="tryMiniTitle">🧪 Kendin Dene</div>
+              <button class="tryMiniBtn" type="button" data-run="lesson6">Çalıştır</button>
+            </div>
+
+            <div class="tryMiniRow3">
+              <div class="tryMiniRow">
+                <label>not1:</label>
+                <input type="number" value="80" data-input="not1" />
+              </div>
+              <div class="tryMiniRow">
+                <label>not2:</label>
+                <input type="number" value="90" data-input="not2" />
+              </div>
+              <div class="tryMiniRow">
+                <label>devam:</label>
+                <select data-input="devam">
+                  <option value="true" selected>True</option>
+                  <option value="false">False</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="tryMiniOut">
+              <div class="tryMiniOutHead">Çıktı</div>
+              <pre data-out>Buraya çıktı gelecek…</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 7) İç içe if - basit -->
+    <section class="card lesson" id="lesson-7">
+      <div class="lesson-head">
+        <h2>7) İç içe if: Pozitif ve Tek/Çift</h2>
+        <span class="tag">Orta</span>
+      </div>
+
+      <div class="block">
+        <h3>Soru</h3>
+        <p><b>Soru:</b> Bir sayı veriliyor. Kurallara göre doğru mesajı yazdırınız:</p>
+        <ul class="bullets">
+          <li>Sayı pozitif ise: çift → “Pozitif ve çift”, tek → “Pozitif ve tek”</li>
+          <li>Sayı sıfır veya negatif ise → “Sıfır veya negatif”</li>
+        </ul>
+      </div>
+
+      <div class="grid">
+        <div class="block">
+          <h3>Çözüm Kodu (Basit)</h3>
+          <div class="codewrap">
+            <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">sayi = 5
+
+if sayi > 0:
+    if sayi % 2 == 0:
+        print("Pozitif ve çift")
+    else:
+        print("Pozitif ve tek")
+else:
+    print("Sıfır veya negatif")</code></pre>
+          </div>
+
+          <div class="output">
+            <div class="out-head">Ekran Çıktısı</div>
+            <pre>Pozitif ve tek</pre>
+          </div>
+        </div>
+
+        <div class="block">
+          <h3>Mini soru</h3>
+          <p><b>Soru:</b> <code>sayi = -2</code> olursa ne yazdırır?</p>
+          <details class="answer">
+            <summary>Çözümü göster</summary>
+            <div class="answer-body">
+              <p><b>Cevap:</b> <code>Sıfır veya negatif</code></p>
+              <div class="output mini">
+                <div class="out-head">Ekran Çıktısı</div>
+                <pre>Sıfır veya negatif</pre>
+              </div>
+            </div>
+          </details>
+
+          <!-- 🧪 Kendin Dene -->
+          <div class="tryMini" data-try="lesson7">
+            <div class="tryMiniHead">
+              <div class="tryMiniTitle">🧪 Kendin Dene</div>
+              <button class="tryMiniBtn" type="button" data-run="lesson7">Çalıştır</button>
+            </div>
+            <div class="tryMiniRow">
+              <label>sayi:</label>
+              <input type="number" value="-2" data-input="sayi" />
+            </div>
+            <div class="tryMiniOut">
+              <div class="tryMiniOutHead">Çıktı</div>
+              <pre data-out>Buraya çıktı gelecek…</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 8) İç içe if - gelişmiş -->
+    <section class="card lesson" id="lesson-8">
+      <div class="lesson-head">
+        <h2>8) İç içe if: Gelişmiş tek/çift + pozitif/negatif/sıfır</h2>
+        <span class="tag">Orta</span>
+      </div>
+
+      <div class="grid">
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> Bir sayının tek/çift ve pozitif/negatif/sıfır durumunu detaylı şekilde yazdırınız.</p>
+
+          <h3 style="margin-top:14px;">Kod</h3>
+          <div class="codewrap">
+            <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">sayi = 0
+
+if sayi % 2 != 0:
+    if sayi > 0:
+        print("Pozitif tek sayı")
+    else:
+        print("Negatif tek sayı")
+elif sayi % 2 == 0:
+    if sayi < 0:
+        print("Negatif çift sayı")
+    elif sayi > 0:
+        print("Pozitif çift sayı")
+    else:
+        print("Sayı sıfırdır")</code></pre>
+          </div>
+
+          <div class="output">
+            <div class="out-head">Ekran Çıktısı</div>
+            <pre>Sayı sıfırdır</pre>
+          </div>
+        </div>
+
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> <code>sayi = -7</code> olursa çıktı ne olur?</p>
+          <details class="answer">
+            <summary>Çözümü göster</summary>
+            <div class="answer-body">
+              <p><b>Cevap:</b> <code>Negatif tek sayı</code></p>
+              <div class="output mini">
+                <div class="out-head">Ekran Çıktısı</div>
+                <pre>Negatif tek sayı</pre>
+              </div>
+            </div>
+          </details>
+
+          <!-- 🧪 Kendin Dene -->
+          <div class="tryMini" data-try="lesson8">
+            <div class="tryMiniHead">
+              <div class="tryMiniTitle">🧪 Kendin Dene</div>
+              <button class="tryMiniBtn" type="button" data-run="lesson8">Çalıştır</button>
+            </div>
+            <div class="tryMiniRow">
+              <label>sayi:</label>
+              <input type="number" value="-7" data-input="sayi" />
+            </div>
+            <div class="tryMiniOut">
+              <div class="tryMiniOutHead">Çıktı</div>
+              <pre data-out>Buraya çıktı gelecek…</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 9) Yaş + Öğrenci -->
+    <section class="card lesson" id="lesson-9">
+      <div class="lesson-head">
+        <h2>9) Orta Seviye: Yaş ve Öğrenci Kontrolü</h2>
+        <span class="tag">Orta</span>
+      </div>
+
+      <div class="block">
+        <h3>Soru</h3>
+        <ul class="bullets">
+          <li>18+ ise: öğrenci → indirimli, değilse → tam ücret</li>
+          <li>18 altı ise: giriş yok</li>
+        </ul>
+      </div>
+
+      <div class="grid">
+        <div class="block">
+          <h3>Kod</h3>
+          <div class="codewrap">
+            <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">yas = int(input("Yaşınızı girin: "))
+ogrenci_mi = input("Öğrenci misiniz? (evet/hayır): ")
+
+if yas >= 18:
+    if ogrenci_mi == "evet":
+        print("Giriş ücreti indirimli")
+    else:
+        print("Giriş tam ücret")
+else:
+    print("Girişe izin yok")</code></pre>
+          </div>
+
+          <div class="output">
+            <div class="out-head">Ekran Çıktısı</div>
+            <div class="out-sub">Örnek giriş: <b>Yaş=18</b>, <b>Öğrenci=evet</b></div>
+            <pre>Giriş ücreti indirimli</pre>
+          </div>
+        </div>
+
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> Yaş 17 ise öğrenci olsa bile ne olur?</p>
+          <details class="answer">
+            <summary>Çözümü göster</summary>
+            <div class="answer-body">
+              <p><b>Cevap:</b> <code>Girişe izin yok</code>. Çünkü ilk koşul (yas &gt;= 18) sağlanmıyor.</p>
+              <div class="output mini">
+                <div class="out-head">Ekran Çıktısı</div>
+                <pre>Girişe izin yok</pre>
+              </div>
+            </div>
+          </details>
+
+          <!-- 🧪 Kendin Dene -->
+          <div class="tryMini" data-try="lesson9">
+            <div class="tryMiniHead">
+              <div class="tryMiniTitle">🧪 Kendin Dene</div>
+              <button class="tryMiniBtn" type="button" data-run="lesson9">Çalıştır</button>
+            </div>
+
+            <div class="tryMiniRow3">
+              <div class="tryMiniRow">
+                <label>yas:</label>
+                <input type="number" value="17" data-input="yas" />
+              </div>
+              <div class="tryMiniRow">
+                <label>ogrenci:</label>
+                <select data-input="ogrenci">
+                  <option value="evet" selected>evet</option>
+                  <option value="hayir">hayır</option>
+                </select>
+              </div>
+              <div class="tryMiniRow">
+                <label>&nbsp;</label>
+                <span class="tryMiniHint">İstersen değerleri değiştir</span>
+              </div>
+            </div>
+
+            <div class="tryMiniOut">
+              <div class="tryMiniOutHead">Çıktı</div>
+              <pre data-out>Buraya çıktı gelecek…</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 10) Zor: Not + devam -->
+    <section class="card lesson" id="lesson-10">
+      <div class="lesson-head">
+        <h2>10) Zor Seviye: Not ve Devam Kontrolü</h2>
+        <span class="tag">Zor</span>
+      </div>
+
+      <div class="grid">
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> Devam “evet” ise ortalamaya göre takdir/teşekkür/geçmedi yazdırınız. Devam “hayır” ise devamsızlıktan kaldı yazdırınız.</p>
+
+          <h3 style="margin-top:14px;">Kod</h3>
+          <div class="codewrap">
+            <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">not1 = 75
+not2 = 80
+devam = input("Devam (evet/hayır): ")
+
+ortalama = (not1 + not2) / 2
+
+if devam == "evet":
+    if ortalama >= 85:
+        print("Takdir aldınız")
+    elif ortalama >= 70:
+        print("Teşekkür aldınız")
+    else:
+        print("Geçemediniz")
+else:
+    print("Devamsızlıktan kaldınız")</code></pre>
+          </div>
+
+          <div class="output">
+            <div class="out-head">Ekran Çıktısı</div>
+            <div class="out-sub">Örnek giriş: <b>devam=evet</b></div>
+            <pre>Teşekkür aldınız</pre>
+          </div>
+        </div>
+
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> Devam “hayır” ise ortalama 95 olsa bile ne olur?</p>
+          <details class="answer">
+            <summary>Çözümü göster</summary>
+            <div class="answer-body">
+              <p><b>Cevap:</b> <code>Devamsızlıktan kaldınız</code>. Çünkü en üstte devam kontrolü var.</p>
+              <div class="output mini">
+                <div class="out-head">Ekran Çıktısı</div>
+                <pre>Devamsızlıktan kaldınız</pre>
+              </div>
+            </div>
+          </details>
+
+          <!-- 🧪 Kendin Dene -->
+          <div class="tryMini" data-try="lesson10">
+            <div class="tryMiniHead">
+              <div class="tryMiniTitle">🧪 Kendin Dene</div>
+              <button class="tryMiniBtn" type="button" data-run="lesson10">Çalıştır</button>
+            </div>
+
+            <div class="tryMiniRow3">
+              <div class="tryMiniRow">
+                <label>not1:</label>
+                <input type="number" value="95" data-input="not1" />
+              </div>
+              <div class="tryMiniRow">
+                <label>not2:</label>
+                <input type="number" value="95" data-input="not2" />
+              </div>
+              <div class="tryMiniRow">
+                <label>devam:</label>
+                <select data-input="devam">
+                  <option value="evet">evet</option>
+                  <option value="hayir" selected>hayır</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="tryMiniOut">
+              <div class="tryMiniOutHead">Çıktı</div>
+              <pre data-out>Buraya çıktı gelecek…</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 11) Oyun karakteri -->
+    <section class="card lesson" id="lesson-11">
+      <div class="lesson-head">
+        <h2>11) İleri: Çok katmanlı iç içe if (Oyun karakteri)</h2>
+        <span class="tag">İleri</span>
+      </div>
+
+      <div class="grid">
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> Can/level/altın değerlerine göre karakterin “eşya alıp alamayacağını” belirleyen programı yazınız.</p>
+
+          <h3 style="margin-top:14px;">Kod</h3>
+          <div class="codewrap">
+            <button class="copy" data-copy>kopyala</button>
+<pre><code class="language-python">can = 3
+altin = 100
+level = 5
+
+if can > 0:
+    if level >= 5:
+        if altin >= 50:
+            print("Büyülü kılıcı alabilirsin")
+        else:
+            print("Yeterli altının yok")
+    else:
+        print("Seviyen yeterli değil")
+else:
+    print("Öldün, oyuna yeniden başla")</code></pre>
+          </div>
+
+          <div class="output">
+            <div class="out-head">Ekran Çıktısı</div>
+            <pre>Büyülü kılıcı alabilirsin</pre>
+          </div>
+        </div>
+
+        <div class="block">
+          <h3>Soru</h3>
+          <p><b>Soru:</b> <code>can = 0</code> olursa diğer değişkenlere bakar mı?</p>
+          <details class="answer">
+            <summary>Çözümü göster</summary>
+            <div class="answer-body">
+              <p><b>Cevap:</b> Hayır. Direkt <b>else</b> çalışır: <code>Öldün, oyuna yeniden başla</code>.</p>
+              <div class="output mini">
+                <div class="out-head">Ekran Çıktısı</div>
+                <pre>Öldün, oyuna yeniden başla</pre>
+              </div>
+            </div>
+          </details>
+
+          <!-- 🧪 Kendin Dene -->
+          <div class="tryMini" data-try="lesson11">
+            <div class="tryMiniHead">
+              <div class="tryMiniTitle">🧪 Kendin Dene</div>
+              <button class="tryMiniBtn" type="button" data-run="lesson11">Çalıştır</button>
+            </div>
+
+            <div class="tryMiniRow3">
+              <div class="tryMiniRow">
+                <label>can:</label>
+                <input type="number" value="3" data-input="can" />
+              </div>
+              <div class="tryMiniRow">
+                <label>level:</label>
+                <input type="number" value="5" data-input="level" />
+              </div>
+              <div class="tryMiniRow">
+                <label>altin:</label>
+                <input type="number" value="25" data-input="altin" />
+              </div>
+            </div>
+
+            <div class="tryMiniOut">
+              <div class="tryMiniOutHead">Çıktı</div>
+              <pre data-out>Buraya çıktı gelecek…</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <p class="footer-main">Geleceğimiz Sizlersiniz.</p>
+        <p class="footer-sub">Başarılar Sevgili Öğrencilerim.</p>
+        <p class="footer-author">Bölüme Hazırlayan Mehmet PEKER(Bilişim Teknolojileri Öğretmeni)</p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Prism -->
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+
+  <!-- PDF için -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+  <script src="script.js"></script>
+</body>
+</html>
